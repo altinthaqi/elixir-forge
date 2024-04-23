@@ -15,4 +15,16 @@ defmodule Maps do
     person = %{name: :Epsilono, age: 66, gender: nil, likes: :anime}
     person = %{person | age: 33}
   end
+
+  def ipsum do
+    some_map = %{primary: "blue", secondary: "red"}
+    %{secondary: secondary} = some_map
+
+    # can only update existing properties
+    updated_map = Map.put(some_map, :secondary, "blue")
+    other_way_to_update = %{updated_map | secondary: "purple"}
+
+    # insert
+    new_value = Map.put_new(other_way_to_update, :third, "black")
+  end
 end
